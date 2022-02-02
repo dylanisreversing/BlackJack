@@ -5,7 +5,9 @@ class Player
 private:
 	double chips{100};
 	std::string name{};
-	char current_score{};
+	int current_score{};
+	std::vector<char> cards{};
+
 	
 
 public:
