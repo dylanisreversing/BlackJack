@@ -6,3 +6,8 @@ TO DO:
 - Draw card function
 - Keep Score
 - Calculate number of chips won
+
+
+
+LATER:
+- Add GUI
