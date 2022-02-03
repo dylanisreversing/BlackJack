@@ -5,24 +5,58 @@
 #include "PlayerClass.h"
 #include <vector>
 
+
+void displayMenu()
+{
+	std::cout << "[1] Start New Game" << '\n';
+	std::cout << "[2] Display Chips" << '\n';
+
+}
+
 int main()
 {
-	int num_of_players{};
 	std::vector<Player> Players;
+	displayMenu();
 
-	do
+	while (true)
 	{
-		std::cout << "How many players (Max 5): ";
-		std::cin >> num_of_players;
+		int num_of_players{};
+		int option_selected{};
+		std::cout << "Enter Option: ";
+		std::cin >> option_selected;
 
-	} while (std::cin.fail() || (num_of_players < 2 || num_of_players > 5) );
+		switch (option_selected) {
 
-	Players.resize(num_of_players);
+		case 1:
+			Players.clear();
+			do
+			{
+				std::cout << "How many players (Max 5): ";
+				std::cin >> num_of_players;
 
-	std::cout << Players.at(0).get_name();
+			} while (std::cin.fail() || (num_of_players < 1 || num_of_players > 5));
+			Players.resize(num_of_players);
+			break;
 
-	
+		case 2:
+			std::string username_selected{};
+			std::cout << "Who would you like to display chips for? ";
+			std::cin >> username_selected;
 
-
+			bool isFound{ false };
+			for (Player &p : Players)
+			{
+				if (p.get_name() == username_selected)
+				{
+					isFound = true;
+					std::cout << p.get_name() << " has " << p.get_chips() << " chips.\n";
+				}
+			}
+			if (isFound == false)
+			{
+				std::cout << username_selected << " does not exist.\n";
+			}
+		}
+	}
 }
 

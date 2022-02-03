@@ -20,7 +20,7 @@ char draw_card()
 {
 	enum Cards
 	{
-		ONE = 1,
+		ACE = 1,
 		TWO = 2,
 		THREE = 3,
 		FOUR = 4,
@@ -32,8 +32,9 @@ char draw_card()
 		TEN = 10,
 		KING = 10,
 		QUEEN = 10,
-		ACE = 11,
 	};
+
+
 
 
 

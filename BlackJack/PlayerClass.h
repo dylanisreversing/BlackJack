@@ -6,9 +6,7 @@ private:
 	double chips{100};
 	std::string name{};
 	int current_score{};
-	std::vector<char> cards{};
 
-	
 
 public:
 	double get_chips() { return chips; }
