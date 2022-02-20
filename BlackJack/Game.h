@@ -1,10 +1,12 @@
 #include <vector>
 #include "PlayerClass.h"
+#include "Deck.h"
 
 class Game 
 {
 	private:
 		std::vector<Player> players;
+		Deck gameDeck;
 
 
 public:

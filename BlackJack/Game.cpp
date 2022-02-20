@@ -5,6 +5,7 @@ void Game::displayMenu()
 {
 	std::cout << "[1] Start New Game\n";
 	std::cout << "[2] Display Chips\n";
+	std::cout << "[3] Draw Hand\n";
 
 }
 void Game::setPlayers(int num_of_players)
@@ -19,11 +20,17 @@ int Game::getOption()
 	const int num_of_options{ 2 };
 	int num_of_players{};
 	int option_selected{};
-	do
-	{
+
 		std::cout << "Enter Option: ";
 		std::cin >> option_selected;
-	} while (std::cin.fail() || (option_selected > num_of_options));
+		
+		if (std::cin.fail() || (option_selected > num_of_options))
+		{
+			std::cin.clear();
+			std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+			std::cout << "NOT VALID OPTION! TRY AGAIN!\n";
+		}
+			
 
 	return option_selected;
 }
@@ -62,6 +69,9 @@ void Game::parseOption(int option)
 		{
 			std::cout << username_selected << " does not exist.\n";
 		}
+		break;
+
+
 	}
 
 
