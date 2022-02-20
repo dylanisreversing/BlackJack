@@ -3,11 +3,9 @@ BlackJack Card Game in Console Window
 Up to 5 local players
 
 TO DO:
-- Draw card function
-- Keep Score
-- Calculate number of chips won
-
-
+- Initialize Deck
+- Shuffle Deck
+- Draw Card
 
 LATER:
-- Add GUI
+- Add GUI?
